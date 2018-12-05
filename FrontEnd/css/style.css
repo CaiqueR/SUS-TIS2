@@ -42,13 +42,18 @@
   padding: 0% 2%;
   margin: 0 auto; }
 
+header{
+	padding-top: 30px;
+}
 header.index {
   background-image: url("../img/familiafeliz.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  width: 100%; }
+  width: 100%;
+  margin-top:-30px;
+   }
   header.index .bg {
     width: 100%;
     height: 100vh;
@@ -59,15 +64,15 @@ header.index {
       flex-wrap: wrap; }
       header.index .bg .ocupa .logo img {
         width: 200px;
-        margin-top: 30px; }
+         }
       header.index .bg .ocupa .menu {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around; }
         header.index .bg .ocupa .menu a {
-          width: 20px;
-          margin-top: 60px;
+          width: 200px;
+          margin-top: 10px;
           text-decoration: none;
           color: #0C54A0; }
         header.index .bg .ocupa .menu a:hover {
@@ -85,7 +90,7 @@ header.index {
 
 header {
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   background-color: rgba(200, 200, 200, 0.8); }
   header .ocupa {
     display: flex;
@@ -100,8 +105,8 @@ header {
       flex-wrap: wrap;
       justify-content: space-around; }
       header .ocupa .menu a {
-        width: 20px;
-        margin-top: 60px;
+        width: 200px;
+        margin-top: 10px;
         text-decoration: none;
         color: #0C54A0; }
       header .ocupa .menu a:hover {
@@ -114,9 +119,10 @@ header {
       margin-top: 50px;
       border: 2px solid #0C54A0;
       width: 300px;
-      height: 300px;
+      height: auto;
+      padding: 30px 0;
       text-align: center; }
-      header .form form input[type=email], header .form form input[type=text],header .form form input[type=date] , header .form form input[type=number], header .form form input[type=password] {
+      header .form form input[type=email], header .form form input[type=text],header .form form input[type=date] , header .form form input[type=number], header .form form input[type=password],header .form form input[type=submit],header .form form button {
         text-align: center;
         margin-top: 30px;
         width: 80%;
@@ -135,7 +141,7 @@ header {
       width: 300px;
       height: 250px;
       text-align: center; }
-      header .form1 form input[type=email], header .form1 form input[type=text],header .form1 form input[type=date] , header .form1 form input[type=number], header .form1 form input[type=password] {
+      header .form1 form input[type=email], header .form1 form input[type=text],header .form1 form input[type=date] , header .form1 form input[type=number], header .form1 form input[type=password], header .form1 form button {
         text-align: center;
         margin-top: 40px;
         width: 80%;
@@ -146,6 +152,7 @@ header {
         color: black;
         padding: 2%;
         outline: none; }
+
 
               header .form1 form .enviar input[type=submit] {
         text-align: center;
@@ -217,12 +224,49 @@ header {
       margin-top: 70px;
       border: 2px solid #0C54A0;
       width: 300px;
-      height: 180px;
-      text-align: center; }
-
-      #form form{
-        height: 300px;
+      height: auto;
+      text-align: center;
+      padding: 30px 0px; }
+      header .form2{
+      	justify-content: center;
       }
+      #form,#consultar,#formCancel{
+      	text-align: center;
+      }
+      #form form{
+        height: auto;
+        padding: 30px 0;
+
+      }
+ textarea#Resumo{
+    margin-top: 30px;
+    width: 90%;
+    padding-left:10px;
+    max-width: 90%;
+    min-width: 90%;
+    max-height: 90%;
+    min-height: 90%;
+  }
+      }
+      #formCancel form{
+      	height: auto;
+      	padding:40px 0;
+      }
+
+       #form button, #consultar button, #formCancel button{
+      	text-align: center;
+        margin-top: 40px;
+        width: 50%;
+        background: none;
+        height: 30px;
+        border: 1px solid #0C54A0;
+        font-size: 13px;
+        color: black;
+        padding: 2%;
+        outline: none;
+        cursor:pointer;
+      }
+
       header .form2 form input[type=email], header .form2 form input[type=text],header .form2 form input[type=date] , header .form2 form input[type=number], header .form2 form input[type=password] {
         text-align: center;
         margin-top: 40px;

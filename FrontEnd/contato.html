@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Sus - Consulta</title>
+</head>
+<body>
+	<header class="index">
+		<div class="bg">
+			<div class="ocupa container">
+				<div class="logo w50"><img src="img/logo.png"></div>
+				<div class="menu w50">
+					<a href="index.html">Home</a>
+					<a href="cadastroConsulta.html">Cadastrar consulta</a>
+					<a href="posicaofila.html">Pesquisar posição</a>
+					<a href="verificarStatusConsulta.html">Verificar status da consulta</a>
+					<a href="cancelarConsulta.html">Cancelar consulta</a>
+					<a href="verificarDados.html">Verificar dados da consulta</a>
+					<a href="atualizarConsulta.html">Atualizar consulta</a>
+					<a href="contato.html">Contate-nos</a>
+				</div>
+				<div class="text w100">
+					<h1>Formulario de contato</h1>
+				</div>
+			</div>	 
+		</div>
+	</header>
+		<section class="for">
+		<div class="form">
+			<h1>Fale Conosco</h1>
+
+			<form method="post" action="form.php">
+				<input required type="text" name="Nome" placeholder="Nome">
+				<input required type="Email" name="E-mail" placeholder="Email">
+				<textarea required name="Mensagem" placeholder="Mensagem"></textarea>
+
+				<div class="enviar"><input type="submit" name="Enviar" value="Enviar"></div>
+				
+			</form>
+
+		</div>	
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+	<script src="https://malsup.github.com/jquery.form.js"></script> 
+	<script >
+		$(function(){ 
+			$('form').ajaxForm({
+				success:function(){
+					alert("Formulário Enviado com sucesso!"); 
+				}
+
+			}); 
+		}); 
+	</script> 
+</body>
+</html>
