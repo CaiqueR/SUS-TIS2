@@ -1,1 +1,2 @@
-SUS TIS2
+# SUS TIS2 - Descrição:
+ SUS TIS2 é o trabalho prático para a disciplina Trabalho Interdisciplinar de Software II do Bacharelado em Engenharia de Software da Pontifícia Universidade Católica de Minas Gerais - PUC Minas. 
