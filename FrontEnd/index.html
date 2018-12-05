@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Sus - Consulta</title>
+</head>
+<body>
+	<header class="index">
+		<div class="bg">
+			<div class="ocupa container">
+				<div class="logo w50"><img src="img/logo.png"></div>
+				<div class="menu w50">
+					<a href="index.html">Home</a>
+					<a href="cadastroConsulta.html">Cadastrar consulta</a>
+					<a href="posicaofila.html">Pesquisar posição</a>
+					<a href="verificarStatusConsulta.html">Verificar status da consulta</a>
+					<a href="cancelarConsulta.html">Cancelar consulta</a>
+					<a href="verificarDados.html">Verificar dados da consulta</a>
+					<a href="atualizarConsulta.html">Atualizar consulta</a>
+					<a href="contato.html">Contate-nos</a>
+				</div>
+				<div class="text w100">
+					<h1>Saúde e praticidade para o cidadão brasileiro</h1>
+				</div>
+			</div>	 
+		</div>
+	</header>
+	<section class="section1">
+		<div class="container">
+			<div class="text-2 w100">
+				<h1>Sistema único de saúde</h1>
+				<div class="imgsus"><img src="img/saude2.jpg"></div>
+				<p>O Sistema Único de Saúde (SUS) é um dos maiores e mais complexos sistemas de saúde pública do mundo, abrangendo desde o simples atendimento para avaliação da pressão arterial, por meio da Atenção Básica, até o transplante de órgãos, garantindo acesso integral, universal e gratuito para toda a população do país. Com a sua criação, o SUS proporcionou o acesso universal ao sistema público de saúde, sem discriminação. A atenção integral à saúde, e não somente aos cuidados assistenciais, passou a ser um direito de todos os brasileiros, desde a gestação e por toda a vida, com foco na saúde com qualidade de vida, visando a prevenção e a promoção da saúde.<br>
+
+				A gestão das ações e dos serviços de saúde deve ser solidária e participativa entre os três entes da Federação: a União, os Estados e os municípios. A rede que compõe o SUS é ampla e abrange tanto ações quanto os serviços de saúde. Engloba a atenção básica, média e alta complexidades, os serviços urgência e emergência, a atenção hospitalar, as ações e serviços das vigilâncias epidemiológica, sanitária e ambiental e assistência farmacêutica.</p>
+			</div>
+		</div>
+	</section>
+	<section class="for">
+		<div class="form">
+			<h1>Fale Conosco</h1>
+
+			<form method="post" action="form.php">
+				<input required type="text" name="Nome" placeholder="Nome">
+				<input required type="Email" name="E-mail" placeholder="Email">
+				<textarea required name="Mensagem" placeholder="Mensagem"></textarea>
+
+				<div class="enviar"><input type="submit" name="Enviar" value="Enviar"></div>
+				
+			</form>
+
+		</div>	
+	</section>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+	<script src="https://malsup.github.com/jquery.form.js"></script> 
+	<script >
+		$(function(){ 
+			$('form').ajaxForm({
+				success:function(){
+					alert("Formulário Enviado com sucesso!"); 
+				}
+
+			}); 
+		}); 
+	</script> 
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Sus - Verificar Status da Consulta</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script language="JavaScript"  type="text/javascript">
+
+		function FactoryXMLHttpRequest() {
+
+			if(window.XMLHttpRequest) {
+      return new XMLHttpRequest();// Opera 8.0+, Firefox, Chrome, Safari
+  }
+  else if (window.XDomainRequest) {
+      return new XDomainRequest(); // Antigo Safari
+  }
+  else if(window.ActiveXObject) {
+      var msxmls = new Array(// Internet Explorer
+      	'Msxml2.XMLHTTP',
+      	'Microsoft.XMLHTTP',
+      	'Msxml3.XMLHTTP',
+      	'Msxml2.XMLHTTP.7.0',
+      	'Msxml2.XMLHTTP.6.0',
+      	'Msxml2.XMLHTTP.5.0',
+      	'Msxml2.XMLHTTP.4.0',
+      	'Msxml2.XMLHTTP.3.0');
+      for (var i = 0; i < msxmls.length; i++) {
+      	try {
+      		return new ActiveXObject(msxmls[i]);
+      	} catch (e) {
+      	}
+      }
+  } else throw new Error("Could not instantiate XMLHttpRequest");
+}
+
+
+function pergunta(){ 
+	//if (confirm('Tem certeza que os dados estão corretos?')){ 
+		url="http://127.0.0.1:880/verificarStatusConsulta";
+		var nome = document.getElementById("Nome").value;
+		var email = document.getElementById("Email").value;
+
+		url = url + "?Nome="+nome+"&Email="+email;
+		$.ajax({
+			type: 'GET',
+			url: url,
+			success: function(data){
+				console.log(data);
+				var result = $.trim(data);
+				if(result==="Falha1")
+					alert("Resultado ainda não disponível. Tente mais tarde!");
+				else if(result==="Falha")
+					alert("Paciente não encontrado!");
+				else {
+					$("#form")[0].reset();
+					alert(data);
+				}
+			}
+		});
+
+	//} 
+} 
+
+function init() {
+	$(document).ready(function(){
+		var $form = $('form');
+		$form.submit(function(){
+			$.post($(this).attr('action'), $(this).serialize(), function(response){
+				
+			},'json');
+			return false;
+		});
+	});
+}
+
+</script>
+</head>
+<body onload="init()">
+	<header>
+		<div class="bg1">
+			<div class="ocupa container">
+				<div class="logo w50"><img src="img/logo.png"></div>
+				<div class="menu w50">
+					<a href="index.html">Home</a>
+					<a href="cadastroConsulta.html">Cadastrar consulta</a>
+					<a href="posicaofila.html">Pesquisar posição</a>
+					<a href="cancelarConsulta.html">Cancelar consulta</a>
+					<a href="verificarDados.html">Verificar dados da consulta</a>
+					<a href="atualizarConsulta.html">Atualizar consulta</a>
+					<a href="contato.html">Contate-nos</a>
+				</div>
+				<div class="form w100">
+					<h1>VERIFICAR SE RESULTADO ESTÁ PRONTO</h1>
+					<form id="form">
+						<input required type="text" id="Nome" name="Nome" placeholder="Digite o nome do paciente">
+						<input required type="email" id="Email" name="Email" placeholder="Digite o e-mail do paciente">
+						<button onclick="pergunta()">Enviar</button>
+					</form>
+				</div>
+			</div>	 
+		</div>
+	</header>

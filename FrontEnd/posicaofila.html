@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta Content-Type: text/html; charset=utf-8/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script language="JavaScript"  type="text/javascript">
+
+    function FactoryXMLHttpRequest() {
+
+     if(window.XMLHttpRequest) {
+      return new XMLHttpRequest();// Opera 8.0+, Firefox, Chrome, Safari
+    }
+    else if (window.XDomainRequest) {
+      return new XDomainRequest(); // Antigo Safari
+    }
+    else if(window.ActiveXObject) {
+      var msxmls = new Array(// Internet Explorer
+        'Msxml2.XMLHTTP',
+        'Microsoft.XMLHTTP',
+        'Msxml3.XMLHTTP',
+        'Msxml2.XMLHTTP.7.0',
+        'Msxml2.XMLHTTP.6.0',
+        'Msxml2.XMLHTTP.5.0',
+        'Msxml2.XMLHTTP.4.0',
+        'Msxml2.XMLHTTP.3.0');
+      for (var i = 0; i < msxmls.length; i++) {
+       try {
+         return new ActiveXObject(msxmls[i]);
+       } catch (e) {
+       }
+     }
+   } else throw new Error("Could not instantiate XMLHttpRequest");
+ }
+
+
+ function GetIt(url) {
+  var email = document.getElementById("Email").value;
+
+  url = url + "?Email=" + email
+  $.ajax({
+    type: 'GET',
+    url: url,
+    success: function(data){
+      var result = $.trim(data);
+      if(result==="Falha")
+        alert("Paciente não encontrado! Tente novamente.");
+      else {
+        $("#form")[0].reset();
+        alert(data);
+      }
+    }
+  });
+
+  
+}
+function init() {
+ $(document).ready(function(){
+   var $form = $('form');
+   $form.submit(function(){
+    $.post($(this).attr('action'), $(this).serialize(), function(response){
+      
+    },'json');
+    return false;
+  });
+ });
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>Sus - Pesquisar posição na fila</title>
+</head>
+<body onload="init()">
+  <header>
+   <div class="bg1">
+     <div class="ocupa container">
+       <div class="logo w50"><img src="img/logo.png"></div>
+       <div class="menu w50">
+        <a href="index.html">Home</a>
+        <a href="cadastroConsulta.html">Cadastrar consulta</a>
+        <a href="verificarStatusConsulta.html">Verificar status da consulta</a>
+        <a href="cancelarConsulta.html">Cancelar consulta</a>
+        <a href="verificarDados.html">Verificar dados da consulta</a>
+        <a href="atualizarConsulta.html">Atualizar consulta</a>
+        <a href="contato.html">Contate-nos</a>
+      </div>
+      <div class="form3 w100">
+       <div class="w100">
+         <h1>PESQUISAR POSICAÇÃO NA FILA</h1>
+         
+         <form id="form">
+          <input required type="email" id="Email" name="Email" placeholder="Digite o seu Email">
+
+          <button onclick="GetIt('http://127.0.0.1:880/verificaFila')">Pesquisar posicao</button>
+        </form>
+      </div>
+    </div>
+  </div>	 
+</div>
+</header>
+</body>
+</header>
