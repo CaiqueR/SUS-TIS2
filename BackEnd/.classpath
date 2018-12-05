@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/1045514/Desktop/external/json-20160810.jar"/>
+	<classpathentry kind="lib" path="C:/Users/1045514/Desktop/external/simple/simple-common-6.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/1045514/Desktop/external/simple/simple-http-6.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/1045514/Desktop/external/simple/simple-transport-6.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/1045514/Desktop/external/simple/simple-xml-2.7.1.jar"/>
+	<classpathentry kind="output" path="out/production/TIS2"/>
+</classpath>
